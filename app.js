@@ -11,6 +11,10 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, '/')));
 app.use(cors())
 
+console.log("Mongo URI: " + process.env.MONGO_URI)
+console.log("Mongo Username: " + process.env.MONGO_USERNAME)
+console.log("Mongo Password: " + process.env.MONGO_PASSWORD)
+
 mongoose.connect(process.env.MONGO_URI, {
     user: process.env.MONGO_USERNAME,
     pass: process.env.MONGO_PASSWORD,
