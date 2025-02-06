@@ -125,7 +125,7 @@ describe('Planets API Suite', () => {
               .end((err, res) => {
                     res.should.have.status(200);
                     res.body.should.have.property('id').eql(8);
-                    res.body.should.have.property('name').eql('Pluto');
+                    res.body.should.have.property('name').eql('Neptune');
                 done();
               });
         });
