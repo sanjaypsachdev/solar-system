@@ -107,7 +107,7 @@ jobs:
           username: ${{ vars.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
-      - name: Build and push
+      - name: Build Docker Image
         uses: docker/build-push-action@v4
         with:
           context: .
@@ -130,7 +130,7 @@ jobs:
           echo Testing image URL using wget
           wget -q -O - 127.0.0.1:3000/live | grep live
 
-      - name: Build and push
+      - name: Push Docker Image
         uses: docker/build-push-action@v4
         with:
           context: .
